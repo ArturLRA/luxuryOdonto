@@ -1,0 +1,341 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-mono: var(--font-geist-mono);
+
+  /* Luxury Odonto brand colors */
+  --color-petrol-deep: #0c5e6b;
+  --color-petrol-darker: #084550;
+  --color-petrol-light: #0f7b8c;
+  --color-petrol-mist: #e8f2f3;
+  --color-gold-luxury: #db9e04;
+  --color-gold-soft: #e8b54a;
+  --color-gold-copper: #c89c44;
+  --color-gold-pale: #f5e9c8;
+  --color-charcoal-petrol: #0a3a44;
+  --color-cream: #faf6ee;
+  --color-cream-warm: #f5ede0;
+  --color-ink: #1a2932;
+  --color-ink-soft: #435963;
+  --color-whatsapp: #25d366;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Luxury Odonto Brand Palette */
+  --petrol-deep: #0c5e6b;
+  --petrol-darker: #084550;
+  --petrol-light: #0f7b8c;
+  --petrol-mist: #e8f2f3;
+  --gold-luxury: #db9e04;
+  --gold-soft: #e8b54a;
+  --gold-copper: #c89c44;
+  --gold-pale: #f5e9c8;
+  --charcoal-petrol: #0a3a44;
+  --cream: #faf6ee;
+  --cream-warm: #f5ede0;
+  --ink: #1a2932;
+  --ink-soft: #435963;
+  --whatsapp: #25d366;
+
+  --background: #ffffff;
+  --foreground: #1a2932;
+  --card: #ffffff;
+  --card-foreground: #1a2932;
+  --popover: #ffffff;
+  --popover-foreground: #1a2932;
+  --primary: #0c5e6b;
+  --primary-foreground: #ffffff;
+  --secondary: #f5ede0;
+  --secondary-foreground: #0c5e6b;
+  --muted: #f5f2ec;
+  --muted-foreground: #435963;
+  --accent: #db9e04;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e8e2d6;
+  --input: #e8e2d6;
+  --ring: #db9e04;
+  --chart-1: #0c5e6b;
+  --chart-2: #db9e04;
+  --chart-3: #0f7b8c;
+  --chart-4: #c89c44;
+  --chart-5: #435963;
+  --sidebar: #faf6ee;
+  --sidebar-foreground: #1a2932;
+  --sidebar-primary: #0c5e6b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5ede0;
+  --sidebar-accent-foreground: #0c5e6b;
+  --sidebar-border: #e8e2d6;
+  --sidebar-ring: #db9e04;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(219, 158, 4, 0.25);
+    color: #0c5e6b;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #faf6ee;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c89c44;
+    border-radius: 6px;
+    border: 2px solid #faf6ee;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #db9e04;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  .font-display {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* === Brand color utilities === */
+  .bg-petrol-deep { background-color: #0c5e6b; }
+  .bg-petrol-darker { background-color: #084550; }
+  .bg-petrol-light { background-color: #0f7b8c; }
+  .bg-petrol-mist { background-color: #e8f2f3; }
+  .bg-gold-luxury { background-color: #db9e04; }
+  .bg-gold-soft { background-color: #e8b54a; }
+  .bg-gold-copper { background-color: #c89c44; }
+  .bg-charcoal-petrol { background-color: #0a3a44; }
+  .bg-cream { background-color: #faf6ee; }
+  .bg-cream-warm { background-color: #f5ede0; }
+  .bg-ink { background-color: #1a2932; }
+  .bg-ink-soft { background-color: #435963; }
+  .bg-whatsapp { background-color: #25d366; }
+
+  .text-petrol-deep { color: #0c5e6b; }
+  .text-petrol-darker { color: #084550; }
+  .text-petrol-light { color: #0f7b8c; }
+  .text-gold-luxury { color: #db9e04; }
+  .text-gold-soft { color: #e8b54a; }
+  .text-gold-copper { color: #c89c44; }
+  .text-charcoal-petrol { color: #0a3a44; }
+  .text-cream { color: #faf6ee; }
+  .text-ink { color: #1a2932; }
+  .text-ink-soft { color: #435963; }
+  .text-whatsapp { color: #25d366; }
+
+  .border-petrol-deep { border-color: #0c5e6b; }
+  .border-gold-luxury { border-color: #db9e04; }
+  .border-gold-copper { border-color: #c89c44; }
+  .border-gold-soft { border-color: #e8b54a; }
+  .border-cream { border-color: #faf6ee; }
+
+  .from-gold-luxury { --tw-gradient-from: #db9e04 var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+  .to-transparent { --tw-gradient-to: transparent var(--tw-gradient-to-position); }
+  .from-transparent { --tw-gradient-from: transparent var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+
+  /* Petrol gradient backgrounds */
+  .bg-petrol-gradient {
+    background: linear-gradient(135deg, #084550 0%, #0c5e6b 45%, #0a4a55 100%);
+  }
+
+  .bg-petrol-radial {
+    background: radial-gradient(ellipse at top, #0f7b8c 0%, #0c5e6b 50%, #084550 100%);
+  }
+
+  .bg-cream-gradient {
+    background: linear-gradient(180deg, #ffffff 0%, #faf6ee 100%);
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #db9e04 0%, #e8b54a 50%, #c89c44 100%);
+  }
+
+  /* Subtle gold shimmer for headings */
+  .text-gold-shimmer {
+    background: linear-gradient(120deg, #db9e04 0%, #f5d971 50%, #db9e04 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Soft shadow for cards */
+  .shadow-luxury {
+    box-shadow: 0 4px 12px rgba(12, 94, 107, 0.08), 0 2px 4px rgba(12, 94, 107, 0.04);
+  }
+
+  .shadow-luxury-lg {
+    box-shadow: 0 16px 48px rgba(12, 94, 107, 0.12), 0 4px 12px rgba(12, 94, 107, 0.06);
+  }
+
+  .shadow-gold-glow {
+    box-shadow: 0 8px 32px rgba(219, 158, 4, 0.25);
+  }
+
+  /* Decorative gold line */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #db9e04 50%, transparent 100%);
+  }
+
+  .gold-divider-vertical {
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, #db9e04 50%, transparent 100%);
+  }
+
+  /* Petrol overlay for hero images */
+  .petrol-overlay {
+    background: linear-gradient(135deg, rgba(8, 69, 80, 0.92) 0%, rgba(12, 94, 107, 0.85) 50%, rgba(10, 58, 68, 0.95) 100%);
+  }
+
+  /* Texture noise overlay (subtle) */
+  .noise-texture {
+    position: relative;
+  }
+  .noise-texture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Smooth hover lift */
+  .hover-lift {
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Underline animation for nav links */
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: #db9e04;
+    transition: width 200ms ease-out;
+  }
+  .nav-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Slow zoom for hero images */
+  @keyframes slow-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+  }
+  .animate-slow-zoom {
+    animation: slow-zoom 20s ease-out infinite alternate;
+  }
+
+  /* Fade-in-up animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  /* Shimmer pulse for badges */
+  @keyframes shimmer-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(219, 158, 4, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(219, 158, 4, 0); }
+  }
+  .animate-shimmer-pulse {
+    animation: shimmer-pulse 2.5s ease-in-out infinite;
+  }
+
+  /* Smooth scroll offset for sticky header */
+  .scroll-anchor {
+    scroll-margin-top: 80px;
+  }
+}
