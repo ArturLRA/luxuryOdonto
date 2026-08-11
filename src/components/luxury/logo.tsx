@@ -16,11 +16,12 @@ export function Logo({ className, variant = "light" }: LogoProps) {
   return (
     <div className={cn("relative flex items-center", className)}>
       <Image
-        src="/luxury-logo.png"
+        src="/luxury-logo.png?v=2"
         alt="Luxury Odonto — Instituto Odontológico"
         width={180}
         height={79}
         priority
+        unoptimized
         className="h-auto w-auto"
         style={{
           maxWidth: "100%",

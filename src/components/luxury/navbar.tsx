@@ -51,60 +51,66 @@ export function Navbar() {
               <Logo variant="light" className="h-9 lg:h-11 w-auto" />
             </a>
 
-            {/* Desktop nav with dropdowns */}
+            {/* Right-aligned group: nav dropdowns + CTA */}
             <div className="hidden lg:flex items-center gap-1">
-              {navStructure.primary.map((item) => (
-                <div
-                  key={item.label}
-                  className="relative"
-                  onMouseEnter={() => setOpenDropdown(item.label)}
-                >
-                  <button
-                    className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white/85 hover:text-gold-soft transition-colors"
-                    aria-expanded={openDropdown === item.label}
+              {navStructure.primary.map((item, idx) => {
+                const isLast = idx === navStructure.primary.length - 1;
+                return (
+                  <div
+                    key={item.label}
+                    className="relative"
+                    onMouseEnter={() => setOpenDropdown(item.label)}
                   >
-                    {item.label}
-                    <ChevronDown
-                      className={cn(
-                        "w-3.5 h-3.5 transition-transform",
-                        openDropdown === item.label && "rotate-180",
-                      )}
-                    />
-                  </button>
+                    <button
+                      className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white/85 hover:text-gold-soft transition-colors"
+                      aria-expanded={openDropdown === item.label}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={cn(
+                          "w-3.5 h-3.5 transition-transform",
+                          openDropdown === item.label && "rotate-180",
+                        )}
+                      />
+                    </button>
 
-                  {/* Dropdown panel */}
-                  {openDropdown === item.label && (
-                    <div className="absolute top-full left-0 pt-3 min-w-[20rem]">
-                      <div className="bg-white rounded-xl shadow-luxury-lg border border-gold-copper/15 py-2 overflow-hidden">
-                        {item.items.map((sub) => (
-                          <a
-                            key={sub.label}
-                            href={sub.href}
-                            onClick={() => setOpenDropdown(null)}
-                            className="block px-5 py-3 hover:bg-cream transition-colors group"
-                          >
-                            <div className="font-display text-sm font-medium text-charcoal-petrol group-hover:text-petrol-deep transition-colors">
-                              {sub.label}
-                            </div>
-                            <div className="text-xs text-ink-soft mt-0.5">
-                              {sub.description}
-                            </div>
-                          </a>
-                        ))}
+                    {/* Dropdown panel — right-aligned for rightmost items */}
+                    {openDropdown === item.label && (
+                      <div
+                        className={cn(
+                          "absolute top-full pt-3 min-w-[20rem]",
+                          isLast ? "right-0" : "left-0",
+                        )}
+                      >
+                        <div className="bg-white rounded-xl shadow-luxury-lg border border-gold-copper/15 py-2 overflow-hidden">
+                          {item.items.map((sub) => (
+                            <a
+                              key={sub.label}
+                              href={sub.href}
+                              onClick={() => setOpenDropdown(null)}
+                              className="block px-5 py-3 hover:bg-cream transition-colors group"
+                            >
+                              <div className="font-display text-sm font-medium text-charcoal-petrol group-hover:text-petrol-deep transition-colors">
+                                {sub.label}
+                              </div>
+                              <div className="text-xs text-ink-soft mt-0.5">
+                                {sub.description}
+                              </div>
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+                    )}
+                  </div>
+                );
+              })}
 
-            {/* CTA */}
-            <div className="hidden lg:flex items-center gap-3">
+              {/* CTA — right next to nav items */}
               <a
                 href={whatsappLinks.geral}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 bg-gold-gradient text-petrol-deep font-semibold px-5 py-2.5 rounded-full text-sm shadow-gold-glow hover:scale-[1.03] transition-transform"
+                className="group inline-flex items-center gap-2 bg-gold-gradient text-petrol-deep font-semibold px-5 py-2.5 rounded-full text-sm shadow-gold-glow hover:scale-[1.03] transition-transform ml-3"
               >
                 <MessageCircle className="w-4 h-4" />
                 Agende sua avaliação
