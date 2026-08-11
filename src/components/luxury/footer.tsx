@@ -33,7 +33,7 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-4"
           >
-            <Logo variant="light" showTagline className="h-9 w-auto" />
+            <Logo variant="light" showTagline className="h-7 w-auto" />
             <p className="mt-5 text-white/65 text-sm leading-relaxed max-w-sm">
               {site.concept}
             </p>

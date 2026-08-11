@@ -8,25 +8,23 @@ type LogoProps = {
 };
 
 /**
- * Luxury Odonto official logo — uses the brand PNG asset.
- * The logo has a solid navy background (#273c59) which blends
- * seamlessly with the site's dark navy sections.
+ * Luxury Odonto official logo — uses the brand PNG asset (transparent).
+ * The `className` prop controls the displayed height (e.g. "h-8 w-auto").
  */
-export function Logo({ className, variant = "light" }: LogoProps) {
+export function Logo({ className }: LogoProps) {
   return (
     <div className={cn("relative flex items-center", className)}>
       <Image
         src="/luxury-logo.png?v=2"
         alt="Luxury Odonto — Instituto Odontológico"
-        width={180}
-        height={79}
+        width={183}
+        height={81}
         priority
         unoptimized
-        className="h-auto w-auto"
+        className="h-full w-auto max-w-none"
         style={{
-          maxWidth: "100%",
           objectFit: "contain",
-          filter: variant === "dark" ? "none" : "none",
+          display: "block",
         }}
       />
     </div>
