@@ -52,3 +52,31 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# Local assets (briefing PDFs, screenshots — not for production)
+/upload/
+/download/
+
+# Local SQLite database
+/db/
+*.db
+*.db-journal
+
+# Scripts (local dev only)
+/scripts/
+
+# Mini services (local only)
+/mini-services/
+
+# Examples (not part of the app)
+/examples/
+
+# Tests
+/tests/
+
+# Caddy config (local reverse proxy)
+Caddyfile
+
+# Z.ai internal
+.zscripts/
+.env
