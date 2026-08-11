@@ -8,23 +8,23 @@ type LogoProps = {
 };
 
 /**
- * Luxury Odonto official logo — uses the brand PNG asset (transparent).
- * The `className` prop controls the displayed height (e.g. "h-8 w-auto").
+ * Luxury Odonto official logo — transparent PNG.
+ * The wrapper div receives the height className (e.g. h-8 lg:h-10)
+ * and the Image fills it with h-full + width auto to keep aspect ratio.
  */
-export function Logo({ className }: LogoProps) {
+export function Logo({ className, variant = "light" }: LogoProps) {
   return (
-    <div className={cn("relative flex items-center", className)}>
+    <div className={cn("relative flex items-center h-8 lg:h-10", className)}>
       <Image
-        src="/luxury-logo.png?v=2"
+        src="/luxury-logo.png?v=3"
         alt="Luxury Odonto — Instituto Odontológico"
         width={183}
         height={81}
         priority
         unoptimized
-        className="h-full w-auto max-w-none"
+        className="h-full w-auto object-contain"
         style={{
-          objectFit: "contain",
-          display: "block",
+          filter: variant === "dark" ? "none" : "none",
         }}
       />
     </div>
