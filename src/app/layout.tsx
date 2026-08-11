@@ -56,13 +56,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://odontoluxury.com.br",
-    languages: {
-      "pt-BR": "/",
-      "en": "/en/",
-    },
   },
   other: {
-    "theme-color": "#0c5e6b",
+    "theme-color": "#273c59",
   },
 };
 

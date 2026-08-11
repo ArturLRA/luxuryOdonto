@@ -64,16 +64,20 @@
 :root {
   --radius: 0.625rem;
 
-  /* Luxury Odonto Brand Palette */
-  --petrol-deep: #0c5e6b;
-  --petrol-darker: #084550;
-  --petrol-light: #0f7b8c;
-  --petrol-mist: #e8f2f3;
-  --gold-luxury: #db9e04;
-  --gold-soft: #e8b54a;
+  /* Luxury Odonto Brand Palette — extracted from official logo file
+     Logo background: #273c59 (dark navy)
+     Logo gold gradient: #ecc966 → #c89d48 → #af8d49 */
+  --petrol-deep: #273c59;
+  --petrol-darker: #1e2d42;
+  --petrol-light: #34527a;
+  --petrol-mist: #e8edf3;
+  --gold-luxury: #c89c44;
+  --gold-bright: #db9e04;
+  --gold-soft: #d4af5a;
   --gold-copper: #c89c44;
-  --gold-pale: #f5e9c8;
-  --charcoal-petrol: #0a3a44;
+  --gold-pale: #ecc966;
+  --gold-deep: #af8d49;
+  --charcoal-petrol: #1a2536;
   --cream: #faf6ee;
   --cream-warm: #f5ede0;
   --ink: #1a2932;
@@ -86,31 +90,31 @@
   --card-foreground: #1a2932;
   --popover: #ffffff;
   --popover-foreground: #1a2932;
-  --primary: #0c5e6b;
+  --primary: #273c59;
   --primary-foreground: #ffffff;
   --secondary: #f5ede0;
-  --secondary-foreground: #0c5e6b;
+  --secondary-foreground: #273c59;
   --muted: #f5f2ec;
   --muted-foreground: #435963;
-  --accent: #db9e04;
+  --accent: #c89c44;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --border: #e8e2d6;
   --input: #e8e2d6;
-  --ring: #db9e04;
-  --chart-1: #0c5e6b;
-  --chart-2: #db9e04;
-  --chart-3: #0f7b8c;
-  --chart-4: #c89c44;
+  --ring: #c89c44;
+  --chart-1: #273c59;
+  --chart-2: #c89c44;
+  --chart-3: #34527a;
+  --chart-4: #db9e04;
   --chart-5: #435963;
   --sidebar: #faf6ee;
   --sidebar-foreground: #1a2932;
-  --sidebar-primary: #0c5e6b;
+  --sidebar-primary: #273c59;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f5ede0;
-  --sidebar-accent-foreground: #0c5e6b;
+  --sidebar-accent-foreground: #273c59;
   --sidebar-border: #e8e2d6;
-  --sidebar-ring: #db9e04;
+  --sidebar-ring: #c89c44;
 }
 
 @layer base {
@@ -130,8 +134,8 @@
   }
 
   ::selection {
-    background-color: rgba(219, 158, 4, 0.25);
-    color: #0c5e6b;
+    background-color: rgba(200, 156, 68, 0.25);
+    color: #273c59;
   }
 
   /* Refined scrollbar */
@@ -171,62 +175,67 @@
   }
 
   /* === Brand color utilities === */
-  .bg-petrol-deep { background-color: #0c5e6b; }
-  .bg-petrol-darker { background-color: #084550; }
-  .bg-petrol-light { background-color: #0f7b8c; }
-  .bg-petrol-mist { background-color: #e8f2f3; }
-  .bg-gold-luxury { background-color: #db9e04; }
-  .bg-gold-soft { background-color: #e8b54a; }
+  .bg-petrol-deep { background-color: #273c59; }
+  .bg-petrol-darker { background-color: #1e2d42; }
+  .bg-petrol-light { background-color: #34527a; }
+  .bg-petrol-mist { background-color: #e8edf3; }
+  .bg-gold-luxury { background-color: #c89c44; }
+  .bg-gold-bright { background-color: #db9e04; }
+  .bg-gold-soft { background-color: #d4af5a; }
   .bg-gold-copper { background-color: #c89c44; }
-  .bg-charcoal-petrol { background-color: #0a3a44; }
+  .bg-gold-pale { background-color: #ecc966; }
+  .bg-charcoal-petrol { background-color: #1a2536; }
   .bg-cream { background-color: #faf6ee; }
   .bg-cream-warm { background-color: #f5ede0; }
   .bg-ink { background-color: #1a2932; }
   .bg-ink-soft { background-color: #435963; }
   .bg-whatsapp { background-color: #25d366; }
 
-  .text-petrol-deep { color: #0c5e6b; }
-  .text-petrol-darker { color: #084550; }
-  .text-petrol-light { color: #0f7b8c; }
-  .text-gold-luxury { color: #db9e04; }
-  .text-gold-soft { color: #e8b54a; }
+  .text-petrol-deep { color: #273c59; }
+  .text-petrol-darker { color: #1e2d42; }
+  .text-petrol-light { color: #34527a; }
+  .text-gold-luxury { color: #c89c44; }
+  .text-gold-bright { color: #db9e04; }
+  .text-gold-soft { color: #d4af5a; }
   .text-gold-copper { color: #c89c44; }
-  .text-charcoal-petrol { color: #0a3a44; }
+  .text-gold-pale { color: #ecc966; }
+  .text-charcoal-petrol { color: #1a2536; }
   .text-cream { color: #faf6ee; }
   .text-ink { color: #1a2932; }
   .text-ink-soft { color: #435963; }
   .text-whatsapp { color: #25d366; }
 
-  .border-petrol-deep { border-color: #0c5e6b; }
-  .border-gold-luxury { border-color: #db9e04; }
+  .border-petrol-deep { border-color: #273c59; }
+  .border-gold-luxury { border-color: #c89c44; }
   .border-gold-copper { border-color: #c89c44; }
-  .border-gold-soft { border-color: #e8b54a; }
+  .border-gold-soft { border-color: #d4af5a; }
   .border-cream { border-color: #faf6ee; }
 
-  .from-gold-luxury { --tw-gradient-from: #db9e04 var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+  .from-gold-luxury { --tw-gradient-from: #c89c44 var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
   .to-transparent { --tw-gradient-to: transparent var(--tw-gradient-to-position); }
   .from-transparent { --tw-gradient-from: transparent var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
 
-  /* Petrol gradient backgrounds */
+  /* Navy gradient backgrounds (matching logo) */
   .bg-petrol-gradient {
-    background: linear-gradient(135deg, #084550 0%, #0c5e6b 45%, #0a4a55 100%);
+    background: linear-gradient(135deg, #1e2d42 0%, #273c59 45%, #1a2536 100%);
   }
 
   .bg-petrol-radial {
-    background: radial-gradient(ellipse at top, #0f7b8c 0%, #0c5e6b 50%, #084550 100%);
+    background: radial-gradient(ellipse at top, #34527a 0%, #273c59 50%, #1e2d42 100%);
   }
 
   .bg-cream-gradient {
     background: linear-gradient(180deg, #ffffff 0%, #faf6ee 100%);
   }
 
+  /* Gold gradient using logo copper tones */
   .bg-gold-gradient {
-    background: linear-gradient(135deg, #db9e04 0%, #e8b54a 50%, #c89c44 100%);
+    background: linear-gradient(135deg, #c89c44 0%, #d4af5a 50%, #af8d49 100%);
   }
 
   /* Subtle gold shimmer for headings */
   .text-gold-shimmer {
-    background: linear-gradient(120deg, #db9e04 0%, #f5d971 50%, #db9e04 100%);
+    background: linear-gradient(120deg, #c89c44 0%, #ecc966 50%, #c89c44 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -234,15 +243,15 @@
 
   /* Soft shadow for cards */
   .shadow-luxury {
-    box-shadow: 0 4px 12px rgba(12, 94, 107, 0.08), 0 2px 4px rgba(12, 94, 107, 0.04);
+    box-shadow: 0 4px 12px rgba(39, 60, 89, 0.08), 0 2px 4px rgba(39, 60, 89, 0.04);
   }
 
   .shadow-luxury-lg {
-    box-shadow: 0 16px 48px rgba(12, 94, 107, 0.12), 0 4px 12px rgba(12, 94, 107, 0.06);
+    box-shadow: 0 16px 48px rgba(39, 60, 89, 0.12), 0 4px 12px rgba(39, 60, 89, 0.06);
   }
 
   .shadow-gold-glow {
-    box-shadow: 0 8px 32px rgba(219, 158, 4, 0.25);
+    box-shadow: 0 8px 32px rgba(200, 156, 68, 0.28);
   }
 
   /* Decorative gold line */
@@ -256,9 +265,9 @@
     background: linear-gradient(180deg, transparent 0%, #db9e04 50%, transparent 100%);
   }
 
-  /* Petrol overlay for hero images */
+  /* Navy overlay for hero images */
   .petrol-overlay {
-    background: linear-gradient(135deg, rgba(8, 69, 80, 0.92) 0%, rgba(12, 94, 107, 0.85) 50%, rgba(10, 58, 68, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 45, 66, 0.92) 0%, rgba(39, 60, 89, 0.85) 50%, rgba(26, 37, 54, 0.95) 100%);
   }
 
   /* Texture noise overlay (subtle) */

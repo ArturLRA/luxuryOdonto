@@ -29,7 +29,7 @@ const benefits = [
 
 export function NaturalLux() {
   return (
-    <section className="relative bg-petrol-radial noise-texture py-24 lg:py-32 overflow-hidden">
+    <section id="natural-lux" className="scroll-anchor relative bg-petrol-radial noise-texture py-24 lg:py-32 overflow-hidden">
       {/* Decorative gold ring */}
       <div className="pointer-events-none absolute top-1/2 -translate-y-1/2 -right-32 w-[40rem] h-[40rem] rounded-full border border-gold-luxury/15" />
       <div className="pointer-events-none absolute top-1/2 -translate-y-1/2 -right-40 w-[44rem] h-[44rem] rounded-full border border-gold-luxury/8" />

@@ -349,12 +349,34 @@ export const differentials = [
 ];
 
 export const navItems = [
-  { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "#sobre" },
   { label: "Especialidades", href: "#especialidades" },
   { label: "Equipe", href: "#equipe" },
-  { label: "Depoimentos", href: "#depoimentos" },
   { label: "Localização", href: "#localizacao" },
-  { label: "Dúvidas", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
+
+/** Simplified nav structure with dropdown for "A Luxury" group */
+export const navStructure = {
+  primary: [
+    { label: "A Luxury", isDropdown: true, items: [
+      { label: "Sobre nós", href: "#sobre", description: "Conheça nossa história e pilares" },
+      { label: "Diferenciais", href: "#diferenciais", description: "O que torna a Luxury única" },
+      { label: "Equipe", href: "#equipe", description: "Nossos 5 especialistas" },
+      { label: "Depoimentos", href: "#depoimentos", description: "Histórias de pacientes reais" },
+    ]},
+    { label: "Tratamentos", isDropdown: true, items: [
+      { label: "Todas as especialidades", href: "#especialidades", description: "12 tratamentos em 6 categorias" },
+      { label: "Natural Lux®", href: "#natural-lux", description: "Técnica proprietária de lentes" },
+      { label: "Implantes e Próteses", href: "#especialidades", description: "Reabilitação completa" },
+      { label: "Invisalign®", href: "#especialidades", description: "Alinhadores transparentes" },
+      { label: "Estética e Clareamento", href: "#especialidades", description: "Sorrisos harmônicos" },
+    ]},
+    { label: "Visite", isDropdown: true, items: [
+      { label: "Localização", href: "#localizacao", description: "Estreito, Florianópolis" },
+      { label: "Horários", href: "#localizacao", description: "Seg–Sex 8h–19h, Sáb 8h–12h" },
+      { label: "Dúvidas frequentes", href: "#faq", description: "Perguntas e respostas" },
+      { label: "Fale conosco", href: "#contato", description: "WhatsApp, telefone e formulário" },
+    ]},
+  ],
+};

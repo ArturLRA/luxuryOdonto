@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
@@ -7,43 +8,33 @@ type LogoProps = {
 };
 
 /**
- * Luxury Odonto wordmark logo
- * Elegant serif typography with gold accent — emulates the brand identity
- * described in the briefing: gold on petrol backgrounds.
+ * Luxury Odonto official logo — uses the brand PNG asset.
+ * The logo has a solid navy background (#273c59) which blends
+ * seamlessly with the site's dark navy sections.
  */
-export function Logo({ variant = "light", className, showTagline = false }: LogoProps) {
-  const isLight = variant === "light";
-
+export function Logo({ className, variant = "light" }: LogoProps) {
   return (
-    <div className={cn("flex flex-col leading-none", className)}>
-      <div className="flex items-baseline gap-[2px]">
-        <span
-          className="font-display font-semibold tracking-[0.18em] text-[1.05rem] sm:text-[1.15rem]"
-          style={{ color: isLight ? "#db9e04" : "#0c5e6b" }}
-        >
-          LUXURY
-        </span>
-        <span
-          className="font-display italic font-medium tracking-tight text-[1.05rem] sm:text-[1.15rem]"
-          style={{ color: isLight ? "#ffffff" : "#1a2932" }}
-        >
-          Odonto
-        </span>
-      </div>
-      {showTagline && (
-        <span
-          className="font-sans text-[0.55rem] uppercase tracking-[0.32em] mt-1"
-          style={{ color: isLight ? "rgba(255,255,255,0.6)" : "#435963" }}
-        >
-          Instituto Odontológico
-        </span>
-      )}
+    <div className={cn("relative flex items-center", className)}>
+      <Image
+        src="/luxury-logo.png"
+        alt="Luxury Odonto — Instituto Odontológico"
+        width={180}
+        height={79}
+        priority
+        className="h-auto w-auto"
+        style={{
+          maxWidth: "100%",
+          objectFit: "contain",
+          filter: variant === "dark" ? "none" : "none",
+        }}
+      />
     </div>
   );
 }
 
 /**
- * Monogram badge — circle with "L" — used in floating contexts, avatars, etc.
+ * Compact monogram — for favicon, avatar, etc.
+ * Uses a gold "L" on navy background.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
@@ -53,9 +44,7 @@ export function LogoMark({ className }: { className?: string }) {
         className,
       )}
     >
-      <span className="font-display font-bold text-petrol-deep">
-        L
-      </span>
+      <span className="font-display font-bold text-petrol-deep">L</span>
     </div>
   );
 }

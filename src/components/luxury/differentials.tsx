@@ -14,7 +14,7 @@ const iconMap = {
 
 export function Differentials() {
   return (
-    <section className="relative bg-petrol-deep noise-texture py-24 lg:py-32 overflow-hidden">
+    <section id="diferenciais" className="scroll-anchor relative bg-petrol-deep noise-texture py-24 lg:py-32 overflow-hidden">
       {/* Decorative glow */}
       <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] rounded-full bg-gold-luxury/5 blur-3xl" />
 
