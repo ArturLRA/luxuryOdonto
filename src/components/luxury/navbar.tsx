@@ -48,7 +48,7 @@ export function Navbar() {
               className="flex-shrink-0 flex items-center"
               aria-label="Luxury Odonto — Início"
             >
-              <Logo variant="light" className="h-9 lg:h-11 w-auto" />
+              <Logo variant="light" className="h-7 lg:h-9 w-auto" />
             </a>
 
             {/* Right-aligned group: nav dropdowns + CTA */}
@@ -147,7 +147,7 @@ export function Navbar() {
           )}
         >
           <div className="flex items-center justify-between p-5 border-b border-gold-copper/15">
-            <Logo variant="light" className="h-9 w-auto" />
+            <Logo variant="light" className="h-7 w-auto" />
             <button
               onClick={() => setMobileOpen(false)}
               className="p-2 text-white/80 hover:text-gold-soft transition-colors"
